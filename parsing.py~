@@ -1,5 +1,3 @@
-import numpy
-import xml.etree.ElementTree
 from xml.dom import minidom
 
 dictionary = {",":'COMMA',".":'PERIOD',"?":'QMARK',"\"":'QUOTES',"-":'DASH',"!":'EXCLAMATION'}
@@ -72,13 +70,9 @@ print 'Number of empty punctuations:',epsilon
 
 fo = open('train_file.txt','w')
 for i in range(len(final)):
-	fo.write(final[i][0])
-	fo.write('\t')
-	fo.write(final[i][1])
-	fo.write('\t')
-	fo.write(final[i][2])
-	fo.write('\t')
-	fo.write(final[i][3])
+	for j in range(4):
+		fo.write(final[i][j])
+		fo.write('\t')
 	fo.write('\n')
 
 fo.close()
